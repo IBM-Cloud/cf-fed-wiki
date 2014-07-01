@@ -1,0 +1,28 @@
+{
+  "name":               "cf-fed-wiki",
+  "main":               "./lib/cf-fed-wiki",
+  "description":        "Federated Wiki for Cloud Foundry",
+  "version":            "0.2.0",
+  "author":             "pmuellr",
+  "license":            "Apache-2.0",
+  "homepage":           "https://github.com/pmuellr/cf-fed-wiki",
+  "bin": {
+    "cf-fed-wiki":      "bin/cf-fed-wiki.js"
+  },
+  "repository": {
+    "type":             "git",
+    "url":              "https://github.com/pmuellr/cf-fed-wiki.git"
+  },
+  "dependencies": {
+    "wiki-server":      "0.2.x",
+    "wiki-client":      "0.2.x",
+
+    "cfenv":            "0.2.x",
+    "nopt":             "3.0.x",
+    "q":                "1.0.x",
+    "underscore":       "1.6.x"
+  },
+  "devDependencies": {
+    "coffee-script":    "1.7.x"
+  }
+}
