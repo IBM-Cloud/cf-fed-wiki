@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "cfenv":                "1.0.x",
+    "wiki-server":          "0.5",
+    "wiki-client":          "0.4",
     "wiki":                 "0.6.x",
+    "wiki-storage-couchdb": "0.0.x",
     "wiki-storage-mongodb": "0.0.x"
   },
   "devDependencies": {

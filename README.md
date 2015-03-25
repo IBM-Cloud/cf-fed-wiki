@@ -5,6 +5,8 @@ The `cf-fed-wiki` package is a version of the
 [Federated Wiki server](http://fed.wiki.org/view/welcome-visitors)
 customized for deployment to Cloud Foundry.
 
+The best way to learn about Federated Wiki is to visit the
+[Federated Wiki video site](http://video.fed.wiki.org/).
 
 
 deploy on Bluemix
@@ -19,6 +21,17 @@ clicking the "Deploy to Bluemix" button below:
 <!-- __ those two underscores are needed to fix atom hilighting - grumble -->
 
 
+deploy on Cloud Foundry, by hand
+================================================================================
+
+* Create a MongoDB service; the service should be named `mongodb-fedwiki` and
+  should have a single property in it's credentials of either `uri` or `url`.
+
+* Clone this git repo.
+
+* Customize the `manifest.yml` file to provide your own custom `host` property.
+
+* `cf push`
 
 
 license

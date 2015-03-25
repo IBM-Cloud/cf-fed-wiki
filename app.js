@@ -21,23 +21,32 @@ args.push("--port")
 args.push("" + appEnv.port)
 
 args.push("--url")
-args.push(appEnv.url)
+args.push(appEnv.url.replace("https://", "http://"))
 
 // get the mongodb service, or not
 
-var mongoServiceName = "mongodb-fedwiki"
-var msgPrefix        = "mongodb service named `" + mongoServiceName + "`"
+var databaseVal = null
 
-var mongoCreds = appEnv.getServiceCreds(mongoServiceName)
-if (!mongoCreds) {
-  console.log(msgPrefix + " not found; using file system for storage")
+var mongoServiceName = "mongodb-fedwiki"
+var mongoCreds       = appEnv.getServiceCreds(mongoServiceName)
+
+if (mongoCreds) {
+  var mongoURL = mongoCreds.uri || mongoCreds.url
+
+  if (mongoURL) {
+    console.log("service '" + mongoServiceName + "' found; using for storage")
+
+    var mongoOpts = {type: "mongodb", url: mongoURL}
+    databaseVal = JSON.stringify(mongoOpts)
+  }
+}
+
+if (!databaseVal) {
+  console.log("no database service found; using file system for storage")
 }
 else {
-  console.log(msgPrefix + " found; used for storage")
   args.push("--database")
-
-  var mongoOpts = {type: "mongodb", url: mongoCreds.uri || mongoCreds.url}
-  args.push(JSON.stringify(mongoOpts))
+  args.push(databaseVal)
 }
 
 // set the new process.argv
