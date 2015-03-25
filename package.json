@@ -6,17 +6,16 @@
   "author":             "pmuellr",
   "license":            "Apache-2.0",
   "homepage":           "https://github.com/pmuellr/cf-fed-wiki",
+  "scripts": {
+    "postinstall":      "cd ./node_modules/wiki; npm install wiki-storage-mongodb"
+  },
   "repository": {
     "type":             "git",
     "url":              "https://github.com/pmuellr/cf-fed-wiki.git"
   },
   "dependencies": {
-    "cfenv":                "1.0.x",
-    "wiki-server":          "0.5",
-    "wiki-client":          "0.4",
-    "wiki":                 "0.6.x",
-    "wiki-storage-couchdb": "0.0.x",
-    "wiki-storage-mongodb": "0.0.x"
+    "cfenv":            "1.0.x",
+    "wiki":             "0.6.x"
   },
   "devDependencies": {
   }

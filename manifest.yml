@@ -5,9 +5,6 @@ applications:
   memory:    256M
   command:   node app.js
 
-  services:
-  - mongodb-fedwiki
-
   declared-services:
     mongodb-fedwiki:
       label: mongolab

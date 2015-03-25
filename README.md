@@ -24,14 +24,27 @@ clicking the "Deploy to Bluemix" button below:
 deploy on Cloud Foundry, by hand
 ================================================================================
 
-* Create a MongoDB service; the service should be named `mongodb-fedwiki` and
-  should have a single property in it's credentials of either `uri` or `url`.
-
 * Clone this git repo.
 
 * Customize the `manifest.yml` file to provide your own custom `host` property.
 
-* `cf push`
+* Create a MongoDB service; the service should be named `mongodb-fedwiki` and
+  should have a single property in it's credentials of either `uri` or `url`.
+  On Bluemix, you can do this with the command:
+
+        cf create-service mongolab sandbox mongodb-fedwiki
+
+* Push the app without starting it:
+
+        cf push --no-start
+
+* Bind the `mongodb-fedwiki` service to the app (`cf-fed-wiki`):
+
+        cf bind-service cf-fed-wiki mongodb-fedwiki
+
+* Start the app:
+
+        cf start cf-fed-wiki
 
 
 license
