@@ -1,0 +1,9 @@
+---
+applications:
+- name:   cf-fed-wiki
+  host:   cf-fed-wiki-${random-word}
+  memory: 256M
+  declared-services:
+    mongodb-fedwiki:
+      label: mongolab
+      plan:  sandbox
