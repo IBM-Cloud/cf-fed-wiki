@@ -15,7 +15,7 @@ deploy on Bluemix
 You can deploy this app on the [IBM Bluemix PaaS](https://bluemix.net) by
 clicking the "Deploy to Bluemix" button below:
 
-<a target="_blank" href="https://bluemix.net/deploy?repository=https://github.com/pmuellr/cf-fed-wiki.git">
+<a target="_blank" href="https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/cf-fed-wiki.git">
   <img src="http://bluemix.net/deploy/button.png" alt="Deploy to Bluemix">
 </a>
 <!-- __ those two underscores are needed to fix atom hilighting - grumble -->
